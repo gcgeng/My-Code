@@ -1,5 +1,6 @@
-#include <iostream>     // std::cout
-#include <limits>       // std::numeric_limits
-int main(){
-    std::cout << std::numeric_limits<long double>::digits10 << std::endl;
+#include <cstdio>
+#include <queue>
+int main(int argc, char const *argv[]) {
+  printf("Hello world!");
+  return 0;
 }
