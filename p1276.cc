@@ -8,6 +8,8 @@ struct seg{
 void pushdown(seg *t, int k) {
 	if(t[k].tag == -1) return;
 	int l = t[k].l, r = t[k].r, mid = (l + r) >> 1;
+	if(t[k<<1].tag != -1 && (r-l) >= 2) pushdown(t, k<<1);
+	if(t[k<<1|1].tag != -1 && (r-l) >= 2) pushdown(t, k<<1|1);
 	if(t[k].tag == 1) {
 		t[k<<1].sum2 = (mid - l + 1) - t[k<<1].sum1;
 		t[k<<1|1].sum2 = (r - mid) - t[k<<1|1].sum1;
