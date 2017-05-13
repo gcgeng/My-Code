@@ -1,8 +1,8 @@
 #!/bin/bash
 while true; do
   ./r > input
-  ./a < input > output.a
-  ./b < input > output.b
-  diff output.a output.b
+  ./a.out < input > output.a
+  ./check < output.a > output.b
+  diff output.a input
   if [ $? -ne 0 ] ; then break; fi
 done
